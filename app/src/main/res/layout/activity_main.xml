@@ -3,18 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/horizontal_bars"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <include layout="@layout/red_rect"
-        android:id="@+id/first" />
+       <include layout="@layout/horizontal_bars"/>
 
-    <include layout="@layout/blue_rect"
-        android:id="@+id/second" />
-
-    <include layout="@layout/red_rect"
-        android:id="@+id/third" />
-
-    <include layout="@layout/blue_rect"
-        android:id="@+id/fourth" />
+        <include layout="@layout/vert_bars" />
 
 </LinearLayout>
