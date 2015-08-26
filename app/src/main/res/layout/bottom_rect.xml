@@ -3,6 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
-    android:background="#FFFF00">
-
+    android:background="#FF0000"
+    android:id="@+id/bottom_rect">
 </View>

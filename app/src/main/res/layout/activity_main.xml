@@ -2,11 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/horizontal_bars"
     android:orientation="vertical">
 
-       <include layout="@layout/horizontal_bars"/>
+        <include layout="@layout/horizontal_bars" />
 
-        <include layout="@layout/vert_bars" />
+        <include layout="@layout/vertical_bars"/>
+
+        <include layout="@layout/horizontal_bars" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:maxHeight="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:id="@+id/seekBar"
+            android:indeterminate="false"
+            android:max="15"/>
 
 </LinearLayout>

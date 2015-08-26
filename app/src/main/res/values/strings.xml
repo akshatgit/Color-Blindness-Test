@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="menu_option">More Information</string>
+    <string name="message">want to go to a cool website?</string>
+    <string name="reject">nope</string>
+    <string name="accept">yup</string>
 </resources>
