@@ -3,14 +3,14 @@ package com.example.android.modernart;
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Display;
+//import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.Toast;
-import android.support.v4.app.FragmentManager;
+//import android.support.v4.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,30 +21,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
 
         //Display display = getWindowManager().getDefaultDisplay();
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int progress = 0;
 
             @Override
 
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
 
-                progress = progressValue;
+                View white_rect = findViewById(R.id.whiteRectangle);
+                View red_rect = findViewById(R.id.redRectangle);
+                View horizontal_rectangle = findViewById(R.id.horizontal_rect);
 
-                View white_rect = findViewById(R.id.rect_white);
-                View red_rect = findViewById(R.id.rect_red);
-                View bottom_rect = findViewById(R.id.bottom_rect);
+
+                int red_rects_scale = 0xFFFF0000 - (progressValue*(0x00110000));
+                int white_rects_scale = 0xFFFFFF00 - (progressValue*(0xFF111100));
 
                 Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+                if (white_rect != null) {
+                    white_rect.setBackgroundColor(white_rects_scale);
+                }
+                if (horizontal_rectangle!= null) {
+                    horizontal_rectangle.setBackgroundColor(white_rects_scale);
+                }
+                if(red_rect!= null){
+                    red_rect.setBackgroundColor(white_rects_scale);
+                }
 
-                white_rect.setBackgroundColor(16777215 - progressValue*(1 + 16 + 16^2 + 16^3 + 16^4 + 16^5) );
-                bottom_rect.setBackgroundColor(16711680 + progressValue*(16^3 + 16^2));
-                red_rect.setBackgroundColor(16711680 + progressValue*(16^3 + 16^2));
             }
-
 
             @Override
 

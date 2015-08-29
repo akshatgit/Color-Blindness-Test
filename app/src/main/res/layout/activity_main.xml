@@ -4,11 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-        <include layout="@layout/horizontal_bars" />
-
+        <include layout="@layout/horizontal_rect"/>
         <include layout="@layout/vertical_bars"/>
-
-        <include layout="@layout/horizontal_bars" />
+        <include layout="@layout/horizontal_rect"/>
 
         <SeekBar
             android:layout_width="match_parent"
