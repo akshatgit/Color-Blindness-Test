@@ -4,9 +4,43 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-        <include layout="@layout/horizontal_rect"/>
-        <include layout="@layout/vertical_bars"/>
-        <include layout="@layout/horizontal_rect"/>
+    <View xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFF0000"
+        android:id="@+id/horizontal_rect1"
+        android:layout_weight="15"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/horizontal_bars"
+        android:orientation="horizontal"
+        android:layout_weight="75">
+
+        <include layout="@layout/red_rect"
+            android:id="@+id/first" />
+
+        <include layout="@layout/white_rect"
+            android:id="@+id/second" />
+
+        <include layout="@layout/red_rect"
+            android:id="@+id/third" />
+
+        <include layout="@layout/white_rect"
+            android:id="@+id/fourth" />
+
+        <include layout="@layout/red_rect"
+            android:id="@+id/fifth"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFF0000"
+        android:id="@+id/horizontal_rect2"
+        android:layout_weight="15"/>
 
         <SeekBar
             android:layout_width="match_parent"

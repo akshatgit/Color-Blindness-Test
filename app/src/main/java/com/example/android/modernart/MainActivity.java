@@ -32,23 +32,32 @@ public class MainActivity extends AppCompatActivity {
 
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
 
-                View white_rect = findViewById(R.id.whiteRectangle);
-                View red_rect = findViewById(R.id.redRectangle);
-                View horizontal_rectangle = findViewById(R.id.horizontal_rect);
+                View red_rect1 = findViewById(R.id.first);
+                View red_rect2 = findViewById(R.id.third);
+                View red_rect3 = findViewById(R.id.fifth);
+                View red_rect4 = findViewById(R.id.horizontal_rect1);
+                View red_rect5 = findViewById(R.id.horizontal_rect2);
+
+                View white_rect1 = findViewById(R.id.second);
+                View white_rect2 = findViewById(R.id.fourth);
 
 
-                int red_rects_scale = 0xFFFF0000 - (progressValue*(0x00110000));
-                int white_rects_scale = 0xFFFFFF00 - (progressValue*(0xFF111100));
+
+                int red_rects_scale = 0xFFFF0000 + (progressValue*(0x00001100));
+                int white_rects_scale = 0xFFFFFFFF - (progressValue*(0x00111111));
 
                 Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-                if (white_rect != null) {
-                    white_rect.setBackgroundColor(white_rects_scale);
+                if (red_rect1 != null && red_rect2 != null && red_rect3 != null) {
+                    red_rect1.setBackgroundColor(red_rects_scale);
+                    red_rect2.setBackgroundColor(red_rects_scale);
+                    red_rect3.setBackgroundColor(red_rects_scale);
+                    red_rect4.setBackgroundColor(red_rects_scale);
+                    red_rect5.setBackgroundColor(red_rects_scale);
                 }
-                if (horizontal_rectangle!= null) {
-                    horizontal_rectangle.setBackgroundColor(white_rects_scale);
-                }
-                if(red_rect!= null){
-                    red_rect.setBackgroundColor(white_rects_scale);
+
+                if (white_rect1 != null && white_rect2 != null) {
+                    white_rect1.setBackgroundColor(white_rects_scale);
+                    white_rect2.setBackgroundColor(white_rects_scale);
                 }
 
             }
