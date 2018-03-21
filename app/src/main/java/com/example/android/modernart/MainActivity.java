@@ -1,6 +1,7 @@
 package com.example.android.modernart;
 
 import android.app.DialogFragment;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 //import android.view.Display;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
 //import android.support.v4.app.FragmentManager;
@@ -35,33 +37,33 @@ public class MainActivity extends AppCompatActivity {
 //                SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
 //                seekBar2.setProgress(progressValue);
 
-                View red_rect1 = findViewById(R.id.first);
-                View red_rect2 = findViewById(R.id.third);
-                View red_rect3 = findViewById(R.id.fifth);
-                View red_rect4 = findViewById(R.id.horizontal_rect1);
-                View red_rect5 = findViewById(R.id.horizontal_rect2);
-
-                View white_rect1 = findViewById(R.id.second);
-                View white_rect2 = findViewById(R.id.fourth);
-
-
-
-                int red_rects_scale = 0xFFFF0000 + (progressValue*(0x00001100));
-                int white_rects_scale = 0xFFFFFFFF - (progressValue*(0x00111111));
-
-//                Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-                if (red_rect1 != null && red_rect2 != null && red_rect3 != null) {
-                    red_rect1.setBackgroundColor(red_rects_scale);
-                    red_rect2.setBackgroundColor(red_rects_scale);
-                    red_rect3.setBackgroundColor(red_rects_scale);
-                    red_rect4.setBackgroundColor(red_rects_scale);
-                    red_rect5.setBackgroundColor(red_rects_scale);
-                }
-
-                if (white_rect1 != null && white_rect2 != null) {
-                    white_rect1.setBackgroundColor(white_rects_scale);
-                    white_rect2.setBackgroundColor(white_rects_scale);
-                }
+//                View red_rect1 = findViewById(R.id.first);
+//                View red_rect2 = findViewById(R.id.third);
+//                View red_rect3 = findViewById(R.id.fifth);
+//                View red_rect4 = findViewById(R.id.horizontal_rect1);
+//                View red_rect5 = findViewById(R.id.horizontal_rect2);
+//
+//                View white_rect1 = findViewById(R.id.second);
+//                View white_rect2 = findViewById(R.id.fourth);
+//
+//
+//
+//                int red_rects_scale = 0xFFFF0000 + (progressValue*(0x00001100));
+//                int white_rects_scale = 0xFFFFFFFF - (progressValue*(0x00111111));
+//
+////                Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+//                if (red_rect1 != null && red_rect2 != null && red_rect3 != null) {
+//                    red_rect1.setBackgroundColor(red_rects_scale);
+//                    red_rect2.setBackgroundColor(red_rects_scale);
+//                    red_rect3.setBackgroundColor(red_rects_scale);
+//                    red_rect4.setBackgroundColor(red_rects_scale);
+//                    red_rect5.setBackgroundColor(red_rects_scale);
+//                }
+//
+//                if (white_rect1 != null && white_rect2 != null) {
+//                    white_rect1.setBackgroundColor(white_rects_scale);
+//                    white_rect2.setBackgroundColor(white_rects_scale);
+//                }
 
             }
 
@@ -87,35 +89,39 @@ public class MainActivity extends AppCompatActivity {
 
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
                 SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
+                ImageView i1 = (ImageView) findViewById(R.id.image1);
+                Matrix testImage=i1.getImageMatrix();
+//                i1.setColorFilter();
+//                Toast.makeText(getApplicationContext(),String.valueOf(progressValue),Toast.LENGTH_LONG).show();
                 seekBar2.setProgress(progressValue);
 
-                View red_rect1 = findViewById(R.id.first);
-                View red_rect2 = findViewById(R.id.third);
-                View red_rect3 = findViewById(R.id.fifth);
-                View red_rect4 = findViewById(R.id.horizontal_rect1);
-                View red_rect5 = findViewById(R.id.horizontal_rect2);
-
-                View white_rect1 = findViewById(R.id.second);
-                View white_rect2 = findViewById(R.id.fourth);
-
-
-
-                int red_rects_scale = 0xFFFF0000 + (progressValue*(0x00001100));
-                int white_rects_scale = 0xFFFFFFFF - (progressValue*(0x00111111));
-
-//                Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
-                if (red_rect1 != null && red_rect2 != null && red_rect3 != null) {
-                    red_rect1.setBackgroundColor(red_rects_scale);
-                    red_rect2.setBackgroundColor(red_rects_scale);
-                    red_rect3.setBackgroundColor(red_rects_scale);
-                    red_rect4.setBackgroundColor(red_rects_scale);
-                    red_rect5.setBackgroundColor(red_rects_scale);
-                }
-
-                if (white_rect1 != null && white_rect2 != null) {
-                    white_rect1.setBackgroundColor(white_rects_scale);
-                    white_rect2.setBackgroundColor(white_rects_scale);
-                }
+//                View red_rect1 = findViewById(R.id.first);
+//                View red_rect2 = findViewById(R.id.third);
+//                View red_rect3 = findViewById(R.id.fifth);
+//                View red_rect4 = findViewById(R.id.horizontal_rect1);
+//                View red_rect5 = findViewById(R.id.horizontal_rect2);
+//
+//                View white_rect1 = findViewById(R.id.second);
+//                View white_rect2 = findViewById(R.id.fourth);
+//
+//
+//
+//                int red_rects_scale = 0xFFFF0000 + (progressValue*(0x00001100));
+//                int white_rects_scale = 0xFFFFFFFF - (progressValue*(0x00111111));
+//
+////                Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
+//                if (red_rect1 != null && red_rect2 != null && red_rect3 != null) {
+//                    red_rect1.setBackgroundColor(red_rects_scale);
+//                    red_rect2.setBackgroundColor(red_rects_scale);
+//                    red_rect3.setBackgroundColor(red_rects_scale);
+//                    red_rect4.setBackgroundColor(red_rects_scale);
+//                    red_rect5.setBackgroundColor(red_rects_scale);
+//                }
+//
+//                if (white_rect1 != null && white_rect2 != null) {
+//                    white_rect1.setBackgroundColor(white_rects_scale);
+//                    white_rect2.setBackgroundColor(white_rects_scale);
+//                }
 
             }
 
