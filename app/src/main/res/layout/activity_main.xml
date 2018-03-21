@@ -22,7 +22,7 @@
             android:id="@+id/first" />
 
         <include layout="@layout/white_rect"
-            android:id="@+id/second" />
+            android:id="@+id/second " />
 
         <include layout="@layout/red_rect"
             android:id="@+id/third" />

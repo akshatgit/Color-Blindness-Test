@@ -18,7 +18,7 @@ public class MoreInfoDialog extends DialogFragment {
         builder.setMessage(R.string.message)
                 .setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.moma.org"));
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.color-blindness.com/"));
                         startActivity(browserIntent);
                     }
                 })
