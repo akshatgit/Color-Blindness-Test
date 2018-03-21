@@ -51,4 +51,13 @@
             android:indeterminate="false"
             android:max="15"/>
 
+    <SeekBar
+        android:layout_width="match_parent"
+        android:maxHeight="100dp"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:id="@+id/seekBar2"
+        android:indeterminate="false"
+        android:max="15"/>
+
 </LinearLayout>
