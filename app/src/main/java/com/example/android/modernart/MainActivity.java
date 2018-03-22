@@ -1,7 +1,12 @@
 package com.example.android.modernart;
 
 import android.app.DialogFragment;
+import android.graphics.Color;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Matrix;
+import android.graphics.PorterDuff;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 //import android.view.Display;
@@ -23,6 +28,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageView i1 = (ImageView) findViewById(R.id.image1);
+
+        float[] src = new float[]{
+                1, 0, 0, 0, 0,
+                0, 1, 0, 0, 0,
+                0, 0, 1, 0, 0,
+                0, 0, 0, 1, 0};
+
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.set(src);
+        i1.setColorFilter(new ColorMatrixColorFilter(src));
+
 
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
         SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
@@ -34,6 +51,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
+
+                ImageView i1 = (ImageView) findViewById(R.id.image1);
+                if(progressValue==0)
+                    i1.setImageResource(R.drawable.image0);
+                else if (progressValue == 1)
+                    i1.setImageResource(R.drawable.image16);
+                else if (progressValue == 2)
+                    i1.setImageResource(R.drawable.image15);
+                else if (progressValue == 3)
+                    i1.setImageResource(R.drawable.image14);
+                else if (progressValue == 4)
+                    i1.setImageResource(R.drawable.image13);
+                else if (progressValue == 5)
+                    i1.setImageResource(R.drawable.image12);
+                else if (progressValue == 6)
+                    i1.setImageResource(R.drawable.image10);
+                else if (progressValue == 7)
+                    i1.setImageResource(R.drawable.image9);
+                else if (progressValue == 8)
+                    i1.setImageResource(R.drawable.image8);
+                else if (progressValue == 9)
+                    i1.setImageResource(R.drawable.image7);
+                else if (progressValue == 10)
+                    i1.setImageResource(R.drawable.image6);
+                else if (progressValue == 11)
+                    i1.setImageResource(R.drawable.image5);
+                else if (progressValue == 12)
+                    i1.setImageResource(R.drawable.image4);
+                else if (progressValue == 13)
+                    i1.setImageResource(R.drawable.image3);
+                else if (progressValue == 14)
+                    i1.setImageResource(R.drawable.image2);
+                else if (progressValue == 15)
+                    i1.setImageResource(R.drawable.image1);
 //                SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
 //                seekBar2.setProgress(progressValue);
 
@@ -90,7 +141,54 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
                 SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
                 ImageView i1 = (ImageView) findViewById(R.id.image1);
-                Matrix testImage=i1.getImageMatrix();
+                if(progressValue==0)
+                    i1.setImageResource(R.drawable.image0);
+                else if (progressValue == 1)
+                    i1.setImageResource(R.drawable.image16);
+                else if (progressValue == 2)
+                    i1.setImageResource(R.drawable.image15);
+                else if (progressValue == 3)
+                    i1.setImageResource(R.drawable.image14);
+                else if (progressValue == 4)
+                    i1.setImageResource(R.drawable.image13);
+                else if (progressValue == 5)
+                    i1.setImageResource(R.drawable.image12);
+                else if (progressValue == 6)
+                    i1.setImageResource(R.drawable.image10);
+                else if (progressValue == 7)
+                    i1.setImageResource(R.drawable.image9);
+                else if (progressValue == 8)
+                    i1.setImageResource(R.drawable.image8);
+                else if (progressValue == 9)
+                    i1.setImageResource(R.drawable.image7);
+                else if (progressValue == 10)
+                    i1.setImageResource(R.drawable.image6);
+                else if (progressValue == 11)
+                    i1.setImageResource(R.drawable.image5);
+                else if (progressValue == 12)
+                    i1.setImageResource(R.drawable.image4);
+                else if (progressValue == 13)
+                    i1.setImageResource(R.drawable.image3);
+                else if (progressValue == 14)
+                    i1.setImageResource(R.drawable.image2);
+                else if (progressValue == 15)
+                    i1.setImageResource(R.drawable.image1);
+
+
+
+//                float[] src = new float[]{
+//                         1, 0, 0, 0, 0,
+//                         0, (progressValue+1)/16, 0, 0, 0,
+//                         0, 0, 1, 0, 0,
+//                         0, 0, 0, 1, 0};
+
+//                ColorMatrix colorMatrix = new ColorMatrix();
+//                colorMatrix.set(src);
+//                i1.setColorFilter(new ColorMatrixColorFilter(src));
+//                i1.setColorFilter(-16977900+progressValue*100, PorterDuff.Mode.MULTIPLY);
+
+//                Matrix matrix = i1.getImageMatrix();
+//                matrix.
 //                i1.setColorFilter();
 //                Toast.makeText(getApplicationContext(),String.valueOf(progressValue),Toast.LENGTH_LONG).show();
                 seekBar2.setProgress(progressValue);
